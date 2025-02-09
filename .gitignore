@@ -1,0 +1,52 @@
+config.json
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+.env/
+
+# Logs and databases
+*.log
+*.sqlite3
+
+# Selenium-specific
+*.session
+selenium-screenshots/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE and editor files
+.vscode/
+.idea/
+*.iml
+
+# Dependency management
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Python package files
+build/
+dist/
+*.egg-info/
+
+# Cache files
+.cache/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Test artifacts
+pytest_cache/
+test-results/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
