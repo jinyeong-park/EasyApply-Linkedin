@@ -42,16 +42,22 @@ class EasyApplyLinkedin:
         """This function goes to the 'Jobs' section and looks for all the jobs that match the keywords and location"""
 
         # go to Jobs
-        jobs_link = self.driver.find_element(By.LINK_TEXT, 'Jobs')
+        jobs_link = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.LINK_TEXT, 'Jobs'))
+        )
         jobs_link.click()
 
         # search based on keywords and location and hit enter
-        search_keywords = self.driver.find_element(
-            By.CSS_SELECTOR, ".jobs-search-box__text-input[aria-label='Search jobs']")
+        search_keywords = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located(
+                (By.XPATH, "//input[starts-with(@id, 'jobs-search-box-keyword')]"))
+        )
         search_keywords.clear()
         search_keywords.send_keys(self.keywords)
-        search_location = self.driver.find_element(
-            By.CSS_SELECTOR, ".jobs-search-box__text-input[aria-label='Search location']")
+        search_location = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located(
+                (By.XPATH, "//input[starts-with(@id, 'jobs-search-box-location')]"))
+        )
         search_location.clear()
         search_location.send_keys(self.location)
         search_location.send_keys(Keys.RETURN)
